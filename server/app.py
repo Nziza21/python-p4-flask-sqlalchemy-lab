@@ -19,15 +19,15 @@ def home():
 
 @app.route('/animal/<int:id>')
 def animal_by_id(id):
-    return ''
+    return f'Animal ID: {id}'
 
 @app.route('/zookeeper/<int:id>')
 def zookeeper_by_id(id):
-    return ''
+    return f'Zookeeper ID: {id}'
 
 @app.route('/enclosure/<int:id>')
 def enclosure_by_id(id):
-    return ''
+    return f'Enclosure ID: {id}'
 
 
 if __name__ == '__main__':

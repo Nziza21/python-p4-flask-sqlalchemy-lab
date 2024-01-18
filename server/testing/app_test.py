@@ -57,13 +57,15 @@ class TestApp:
         assert(len(name_ul.findall(response.data.decode())) == 1)
         assert(len(birthday_ul.findall(response.data.decode())) == 1)
 
-    def test_zookeeper_route_has_one_to_many_attr(self):
-        '''displays attributes in zookeeper route in <ul> tags called Animal.'''
-        animal_ul = re.compile(r'\<ul\>Animal.+')
-        
-        id = 1
-        response = app.test_client().get(f'/zookeeper/{id}')
-        assert len(animal_ul.findall(response.data.decode()))
+    def test_enclosure_route_has_one_to_many_attr(self):
+     '''displays attributes in enclosure route in <ul> tags called Animal.'''
+    animal_ul = re.compile(r'\<ul\>Animal.+')
+    
+    id = 1
+    response = app.test_client().get(f'/enclosure/{id}')
+    assert len(animal_ul.findall(response.data.decode())) == 1
+
+
 
     def test_enclosure_route(self):
         '''has a resource available at "/enclosure/<id>".'''
